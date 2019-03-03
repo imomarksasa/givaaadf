@@ -28,7 +28,7 @@ message.channel.send(`** ${men.username}, :credit_card: balance` + " is `" + `${
 }
 }
  
-if(message.content.startsWith(prefix + "daily11")) {
+if(message.content.startsWith(prefix + "daily1111")) {
   if(profile[message.author.id].lastDaily != moment().format('day')) {
     profile[message.author.id].lastDaily = moment().format('day')
     profile[message.author.id].credits += 16011111111
@@ -95,7 +95,7 @@ client.on('message',async message => {
   } 
   
   }
-  if(message.content.startsWith(prefix + "daily")) {
+  if(message.content.startsWith(prefix + "dailyalasericodehere19283")) {
     if(cool.includes(message.author.id)) return message.channel.send(`**:heavy_dollar_sign: | \ , يجب عليك انتظار  يوم لأخذ المبلغ مرة اخرى**`);
     if(mentionn) {
       var one = Math.floor(Math.random() * 9) + 1;
