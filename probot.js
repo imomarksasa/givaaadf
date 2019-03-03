@@ -37,6 +37,7 @@ if(message.content.startsWith(prefix + "daily11")) {
     message.channel.send(`**:stopwatch: | ${message.author.username}, your daily :yen: credits refreshes ${moment().endOf('day').fromNow()}**`)
 }
   }
+});
 
 const ms = require('ms'); // npm i ms
 const cool = [];
