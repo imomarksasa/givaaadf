@@ -6,7 +6,53 @@ const client = new Discord.Client();
 const Canvas = require("canvas"); 
 const prefix = "#"
 
+let userData = require("../userData.json");
 
+module.exports.run = async (bot, message, args,prefix) => {
+	    if (!args[0]) {
+        message.channel.send(`**${prefix}تحويل  <User> <Number Of Crdit>**`);
+         return;
+           }
+        // We should also make sure that args[0] is a number
+        if (isNaN(args[1])) {
+            message.channel.send(`**${prefix}تحويل <User> <Number Of Crdit>**`)
+            return; // Remember to return if you are sending an error message! So the rest of the code doesn't run.
+             }
+			 	const no = ['-'];
+      if (args[1].startsWith(no)) return message.reply("لايمكن تحويل رقم سالب")
+            let defineduser = '';
+            let firstMentioned = message.mentions.users.first() || message.guild.members.get(args[0]);
+            defineduser = (firstMentioned)
+            if (!defineduser) return message.channel.send(`**${prefix}تحويل <User> <Number Of Crdit>**`)
+
+            var mentionned = message.mentions.users.first() || message.guild.members.get(args[0]);
+  if(userData[message.author.id].credit < args[1]) return message.reply("ليس معك هذا الكم من الكردت");
+  if(!userData[defineduser.id]){
+    userData[defineduser.id] = {
+      xp: 0,
+	  credit : 0,
+      level: 1,
+	  like : 0,
+	  ane : "&عني"
+    };
+  }
+  
+  
+      userData[defineduser.id].credit += args[1];
+      userData[message.author.id].credit -= args[1];
+
+ fs.writeFile("./userData.json", JSON.stringify(userData, null, 4), (err) => {
+   if(err) console.log(err)
+ });
+
+      let mariam = message.author.username
+message.channel.send('`' + mentionned.username + '`' + '** تم التحويل **'+ '`' + mariam + '`' + '**المبلغ**'+ (args[1]) + '** :dollar: **')
+
+}
+
+module.exports.help = {
+  name: "تحويل"
+}
 
 
 let profile = JSON.parse(fs.readFileSync("profile.json", "utf8"))
