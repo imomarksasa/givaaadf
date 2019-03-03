@@ -6,7 +6,7 @@ const client = new Discord.Client();
 const Canvas = require("canvas"); 
 const prefix = "#"
 
-let userData = require("../userData.json");
+let userData = require("./userData.json");
 
 module.exports.run = async (bot, message, args,prefix) => {
 	    if (!args[0]) {
