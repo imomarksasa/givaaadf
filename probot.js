@@ -48,15 +48,7 @@ message.channel.send(`**:moneybag: | ${message.author.username}, has transferrer
    if(err) console.log(err)
  });
 
-      let mariam = message.author.username
-message.channel.send('`' + mentionned.username + '`' + '** تم التحويل **'+ '`' + mariam + '`' + '**المبلغ**'+ (args[1]) + '** :dollar: **')
-
-}
-
-module.exports.help = {
-  name: "تحويل"
-}
-
+     
 
 let profile = JSON.parse(fs.readFileSync("profile.json", "utf8"))
 client.on("message", message => {
