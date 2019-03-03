@@ -90,8 +90,7 @@ client.on('message',async message => {
     });
   }
   if(!args[2]) {
-    if(mention.bot) return message.channel.send(`**:heavy_multiplication_x:| ${message.content.split(' ')[1]} لم يتم العثور على**`);
-    message.channel.send(`**${mention.username}, your :credit_card: balance is **${credits[mention.id].credits}`);
+    if(mention.bot) return message.channel.send(`** ${men.username}, :credit_card: balance` + " is `" + `${profile[men.id].credits}$` + "`.**`);
   } 
   
   }
