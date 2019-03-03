@@ -91,7 +91,7 @@ client.on('message',async message => {
   }
   if(!args[2]) {
  if(mention.bot) return message.channel.send(`**:heavy_multiplication_x:| ${message.content.split(' ')[1]} لم يتم العثور على**`);
-    message.channel.send(`**${mention.username}, your :credit_card: balance` + " is `$``" + `${credits[mention.id].credits}` + "`.**");
+    message.channel.send(`**${mention.username}, your :credit_card: balance` + " is `$" + `${credits[mention.id].credits}` + "`.**");
   } 
   
   }
